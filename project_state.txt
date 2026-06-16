@@ -1,0 +1,374 @@
+# NeuroSimV2 Project State
+
+Last Updated: 2026-06-16
+
+---
+
+## PROJECT OVERVIEW
+
+Project Name:
+NeuroSimV2
+
+Mission:
+Build a cloud-hosted cognitive knowledge graph platform that models
+relationships among cognitive states, cognitive functions, factors,
+outcomes, and AI analogues.
+
+Primary Goal:
+Demonstrate professional backend, cloud, data engineering, and
+AI engineering skills through a production-style application.
+
+Target Stack:
+
+Backend:
+
+* Python
+* FastAPI
+* SQLAlchemy
+* Pydantic
+
+Database:
+
+* PostgreSQL
+
+Infrastructure:
+
+* Docker
+* AWS EC2
+* AWS RDS
+* AWS S3
+* CloudWatch
+
+Frontend:
+
+* React
+* TypeScript
+* Vite
+
+AI Features (Future):
+
+* Embeddings
+* Semantic Search
+* Retrieval-Augmented Explanations
+
+---
+
+## CURRENT DEVELOPMENT PHASE
+
+Phase 1:
+Core Graph Backend
+
+Status:
+IN PROGRESS
+
+---
+
+## COMPLETED WORK
+
+Repository Created
+
+Project Structure Created:
+
+backend/
+app/
+main.py
+core/
+database.py
+config.py
+nodes/
+relationships/
+graph/
+search/
+
+docker-compose.yml
+requirements.txt
+README.md
+
+Database Layer Implemented
+
+Implemented:
+
+* SQLAlchemy Base
+* Engine creation
+* SessionLocal
+* get_db dependency
+
+Configuration Layer Implemented
+
+Implemented:
+
+* Settings class
+* DATABASE_URL configuration
+* .env support
+
+Domain Models Implemented
+
+Node Model:
+
+* id
+* name
+* node_type
+* description
+* timestamps
+
+Relationship Model:
+
+* source_node_id
+* target_node_id
+* relationship_type
+* weight
+* evidence_level
+* timestamps
+
+Schemas Implemented
+
+Nodes:
+
+* NodeCreate
+* NodeUpdate
+* NodeRead
+
+Relationships:
+
+* RelationshipCreate
+* RelationshipRead
+
+API Routes Implemented
+
+Health:
+GET /health
+
+Nodes:
+POST   /nodes
+GET    /nodes
+GET    /nodes/{id}
+PUT    /nodes/{id}
+DELETE /nodes/{id}
+
+Relationships:
+POST   /relationships
+GET    /relationships
+GET    /relationships/{id}
+DELETE /relationships/{id}
+
+Graph:
+GET /graph/neighbors/{node_id}
+GET /graph/path
+
+Search:
+GET /search/nodes
+
+Application Wiring Implemented
+
+main.py:
+
+* FastAPI initialization
+* Router registration
+* create_all startup
+
+---
+
+## CURRENT BLOCKER
+
+Docker unavailable.
+
+Observed Error:
+
+zsh: command not found: docker
+
+Need to determine:
+
+1. Is Docker Desktop installed?
+2. Is Docker running?
+3. Should PostgreSQL be run locally instead?
+
+---
+
+## IMMEDIATE NEXT STEPS
+
+Step 1
+Verify Docker Installation
+
+Commands:
+
+which docker
+docker --version
+
+Expected Result:
+Docker available in PATH.
+
+---
+
+Step 2
+Install Docker Desktop if Missing
+
+Verify:
+
+docker --version
+docker compose version
+
+---
+
+Step 3
+Start PostgreSQL
+
+docker compose up -d
+
+Verify:
+
+docker ps
+
+---
+
+Step 4
+Create Database Connection
+
+Confirm:
+
+DATABASE_URL
+
+Connection Successful
+
+---
+
+Step 5
+Launch FastAPI
+
+uvicorn app.main:app --reload
+
+Verify:
+
+http://127.0.0.1:8000/docs
+
+---
+
+Step 6
+Create Initial Graph Data
+
+Create Nodes:
+
+* Stress
+* Working Memory
+* Flow
+* Attention
+* Sleep
+* Creativity
+* Context Window
+
+Create Relationships:
+
+Stress -> impairs -> Working Memory
+
+Sleep -> supports -> Attention
+
+Working Memory -> analogous_to -> Context Window
+
+---
+
+## PHASE 1 DEFINITION OF DONE
+
+Requirements:
+
+[ ] PostgreSQL running
+
+[ ] FastAPI connected to PostgreSQL
+
+[ ] CRUD for Nodes operational
+
+[ ] CRUD for Relationships operational
+
+[ ] Neighbor traversal operational
+
+[ ] Path traversal operational
+
+[ ] Search endpoint operational
+
+[ ] Initial graph dataset loaded
+
+---
+
+## PHASE 2 PREVIEW
+
+Graph Visualization
+
+Potential Deliverables:
+
+* React frontend
+* Interactive graph explorer
+* Node detail pages
+* Relationship visualization
+* Graph filtering
+
+---
+
+## PHASE 3 PREVIEW
+
+AI Layer
+
+Potential Deliverables:
+
+* Embedding generation
+* Semantic search
+* Similarity queries
+* Retrieval-augmented explanations
+
+---
+
+## PHASE 4 PREVIEW
+
+Cloud Deployment
+
+Potential Deliverables:
+
+* Docker image
+* AWS EC2 deployment
+* AWS RDS PostgreSQL
+* CloudWatch logging
+* CI/CD pipeline
+
+---
+
+## INTERVIEW VALUE
+
+Skills Demonstrated:
+
+Backend Engineering:
+
+* FastAPI
+* SQLAlchemy
+* REST APIs
+
+Data Engineering:
+
+* Graph modeling
+* PostgreSQL
+
+Cloud Engineering:
+
+* Docker
+* AWS
+
+AI Engineering:
+
+* Embeddings
+* Semantic search
+* Retrieval systems
+
+Software Engineering:
+
+* Clean architecture
+* Layered design
+* Production practices
+
+---
+
+## NOTES
+
+Future architectural consideration:
+
+Potential migration to Neo4j should be evaluated only if graph
+complexity significantly exceeds PostgreSQL traversal capabilities.
+
+Current recommendation:
+Remain on PostgreSQL until a clear need emerges.
+

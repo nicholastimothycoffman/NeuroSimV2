@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: neurosimv2-db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: neurosimv2
+    ports:
+      - "5432:5432"
+    volumes:
+      - neurosimv2_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  neurosimv2_postgres_data:
