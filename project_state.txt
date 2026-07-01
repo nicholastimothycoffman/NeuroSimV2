@@ -8,7 +8,7 @@ v1.0 (Minimum Impressive Product)
 
 Overall Progress
 
-█████░░░░░ 55%
+██████░░░░ 63%
 
 Current Milestone
 
@@ -18,11 +18,11 @@ Production Backend
 
 Status
 
-IN PROGRESS
+IN PROGRESS (~70% Complete)
 
 Estimated Remaining
 
-4–6 weeks
+3–5 weeks
 
 -------------------------------------------------------------------------------
 
@@ -36,12 +36,13 @@ Mission
 
 Build a production-quality cognitive knowledge graph platform that
 demonstrates backend engineering, cloud engineering, data engineering,
-and introductory AI engineering.
+and practical AI integration.
 
 Portfolio Goal
 
-Produce a polished Version 1.0 suitable for job applications,
-then continue expanding the platform after employment.
+Produce a polished Version 1.0 suitable for backend, cloud, and AI
+engineering interviews, then continue expanding the platform after
+employment.
 
 -------------------------------------------------------------------------------
 
@@ -53,15 +54,18 @@ Backend
 * FastAPI
 * SQLAlchemy
 * Pydantic
+* pytest
 
 Database
 
 * PostgreSQL
+* Alembic (planned)
 
 Infrastructure
 
 * Docker
 * Docker Compose
+* GitHub Actions (planned)
 
 Frontend
 
@@ -78,15 +82,16 @@ Cloud
 
 AI
 
-* Embeddings
+* Sentence Embeddings
 * Semantic Search
-* LLM-assisted explanations
+* LLM-assisted Explanations
 
 -------------------------------------------------------------------------------
 
 ## MILESTONE ROADMAP
 
 -------------------------------------------------------------------------------
+
 Milestone 1
 
 Project Foundation
@@ -108,6 +113,7 @@ Deliverables
 ✓ FastAPI
 
 -------------------------------------------------------------------------------
+
 Milestone 2
 
 Core Graph Backend
@@ -131,34 +137,60 @@ Deliverables
 ✓ Swagger Verification
 
 -------------------------------------------------------------------------------
+
 Milestone 3
 
 Production Backend
 
 Status
 
-🟨 CURRENT
+CURRENT
+
+Completed
+
+✓ pytest configuration
+
+✓ FastAPI TestClient
+
+✓ Database fixtures
+
+✓ Dependency overrides
+
+✓ Health endpoint tests
+
+✓ Node CRUD tests
 
 Remaining Tasks
 
-□ Automated testing
+□ Relationship endpoint tests
 
-□ API documentation
+□ Search endpoint tests
+
+□ Graph traversal tests
+
+□ API documentation improvements
 
 □ Minor schema cleanup
 
+□ Introduce Alembic migrations
+
 Goal
 
-Demonstrate production-quality backend practices.
+Demonstrate production-quality backend engineering practices.
+
+Estimated Progress
+
+Approximately 70%
 
 -------------------------------------------------------------------------------
+
 Milestone 4
 
 Interactive Graph Explorer
 
 Status
 
-⬜ Upcoming
+Upcoming
 
 Deliverables
 
@@ -168,30 +200,33 @@ Deliverables
 
 □ Cytoscape.js
 
-□ Interactive graph
+□ Interactive graph visualization
 
-□ Search
+□ Search interface
 
 □ Node detail panel
 
 Goal
 
-Provide an intuitive visualization of the cognitive graph.
+Provide an intuitive visualization of the cognitive knowledge graph.
 
 -------------------------------------------------------------------------------
+
 Milestone 5
 
 Cloud Deployment
 
 Status
 
-⬜ Upcoming
+Upcoming
 
 Deliverables
 
-□ Docker image
+□ Production Docker image
 
-□ GitHub Actions
+□ Docker Compose refinement
+
+□ GitHub Actions CI
 
 □ AWS EC2
 
@@ -204,13 +239,14 @@ Goal
 Deploy a publicly accessible production instance.
 
 -------------------------------------------------------------------------------
+
 Milestone 6
 
 Introductory AI Layer
 
 Status
 
-⬜ Upcoming
+Upcoming
 
 Deliverables
 
@@ -225,13 +261,14 @@ Goal
 Demonstrate practical AI integration without unnecessary complexity.
 
 -------------------------------------------------------------------------------
+
 Milestone 7
 
 Production Polish
 
 Status
 
-⬜ Upcoming
+Upcoming
 
 Deliverables
 
@@ -252,13 +289,14 @@ Goal
 Prepare the project for technical interviews.
 
 -------------------------------------------------------------------------------
+
 Milestone 8
 
 Portfolio Release
 
 Status
 
-⬜ Upcoming
+Upcoming
 
 Deliverables
 
@@ -274,15 +312,13 @@ Deliverables
 
 Goal
 
-Begin actively applying for backend/cloud/AI positions.
+Begin actively applying for backend, cloud, and AI engineering positions.
 
 -------------------------------------------------------------------------------
 
 ## CURRENT ARCHITECTURE
 
-React (Upcoming)
-
-↓
+Current
 
 FastAPI
 
@@ -298,9 +334,33 @@ PostgreSQL
 
 Docker
 
+Version 1.0 Target
+
+React + TypeScript + Cytoscape.js
+
 ↓
 
-AWS (Upcoming)
+FastAPI
+
+↓
+
+SQLAlchemy ORM
+
+↓
+
+PostgreSQL
+
+↓
+
+Docker + Docker Compose
+
+↓
+
+AWS EC2 + AWS RDS
+
+↓
+
+CloudWatch + GitHub Actions
 
 -------------------------------------------------------------------------------
 
@@ -316,16 +376,16 @@ Approximately
 
 Purpose
 
-Provide sufficient data to develop and validate backend
-functionality.
+Provide sufficient data to validate backend functionality while keeping
+development simple.
 
 Version 1.0 Goal
 
 Approximately
 
-30–50 nodes
+* 30–50 nodes
 
-50–100 relationships
+* 50–100 relationships
 
 Future versions may significantly expand beyond this.
 
@@ -335,31 +395,43 @@ Future versions may significantly expand beyond this.
 
 1.
 
-Automated testing
+Complete automated testing
 
-pytest
+✓ pytest
 
-FastAPI TestClient
+✓ FastAPI TestClient
 
-Database fixtures
+✓ Database fixtures
+
+✓ Dependency overrides
+
+✓ Health endpoint tests
+
+✓ Node CRUD tests
+
+□ Relationship endpoint tests
+
+□ Search endpoint tests
+
+□ Graph traversal tests
 
 2.
 
 API documentation
 
-Examples
+□ Endpoint descriptions
 
-Responses
+□ Request examples
 
-Endpoint descriptions
+□ Response examples
 
 3.
 
-Minor schema refinement
+Production schema management
 
-Only changes necessary for Version 1.0
+□ Minor schema cleanup
 
-Avoid premature optimization.
+□ Alembic migrations
 
 4.
 
@@ -371,7 +443,7 @@ AWS deployment
 
 6.
 
-Basic AI features
+Introductory AI layer
 
 -------------------------------------------------------------------------------
 
@@ -397,13 +469,15 @@ Included
 
 ✓ Search
 
+✓ Automated testing
+
 ✓ React visualization
 
 ✓ AWS deployment
 
-✓ Basic AI search
+✓ Semantic search
 
-This version is sufficient for interviewing.
+Suitable for backend, cloud, and AI engineering interviews.
 
 -------------------------------------------------------------------------------
 
@@ -413,11 +487,13 @@ Possible Improvements
 
 * Larger dataset
 
-* Better ontology
+* Improved ontology
 
 * Richer metadata
 
 * Additional graph analytics
+
+* Performance optimization
 
 -------------------------------------------------------------------------------
 
@@ -425,7 +501,7 @@ Version 2.0
 
 Long-Term Vision
 
-* Retrieval-Augmented Generation
+* Retrieval-Augmented Generation (RAG)
 
 * Research citations
 
@@ -437,6 +513,8 @@ Long-Term Vision
 
 * Collaborative editing
 
+* Knowledge ingestion pipeline
+
 -------------------------------------------------------------------------------
 
 ## INTERVIEW VALUE
@@ -444,6 +522,8 @@ Long-Term Vision
 Demonstrated Skills
 
 Backend Engineering
+
+✓ Python
 
 ✓ FastAPI
 
@@ -453,17 +533,25 @@ Backend Engineering
 
 ✓ Dependency Injection
 
+✓ Automated Testing (pytest)
+
 Database
 
 ✓ PostgreSQL
 
 ✓ Relational Modeling
 
+✓ ORM Design
+
 Infrastructure
 
 ✓ Docker
 
 ✓ Docker Compose
+
+□ GitHub Actions
+
+□ AWS Deployment
 
 Frontend
 
@@ -473,11 +561,17 @@ Frontend
 
 * TypeScript
 
+* Cytoscape.js
+
 Cloud
 
 (Upcoming)
 
-* AWS
+* AWS EC2
+
+* AWS RDS
+
+* CloudWatch
 
 * CI/CD
 
@@ -485,7 +579,7 @@ AI
 
 (Upcoming)
 
-* Embeddings
+* Sentence Embeddings
 
 * Semantic Search
 
@@ -495,11 +589,15 @@ AI
 
 ## PROJECT PHILOSOPHY
 
-The objective is not to build every possible feature before applying
-for positions.
+The objective is not to build every possible feature before applying for
+engineering positions.
 
 The objective is to complete a polished Version 1.0 that clearly
-demonstrates modern backend, cloud, and AI engineering skills.
+demonstrates modern backend engineering, cloud deployment, automated
+testing, and practical AI integration.
+
+Every milestone should add a recognizable engineering competency that
+can be discussed during technical interviews.
 
 Future releases will continue to evolve the platform after Version 1.0
 is complete.
