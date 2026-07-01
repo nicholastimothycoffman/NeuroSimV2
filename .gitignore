@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
+*.pyc
 
 # Virtual Environments
 venv/
@@ -22,6 +23,7 @@ venv/
 
 # Python Testing
 .pytest_cache/
+test_neurosim.db
 
 # Coverage
 .coverage
