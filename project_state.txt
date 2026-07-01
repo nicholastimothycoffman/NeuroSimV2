@@ -1,6 +1,6 @@
 # NeuroSimV2 Project State
 
-Last Updated: 2026-06-16
+Last Updated: 2026-07-01
 
 ---
 
@@ -15,360 +15,614 @@ relationships among cognitive states, cognitive functions, factors,
 outcomes, and AI analogues.
 
 Primary Goal:
-Demonstrate professional backend, cloud, data engineering, and
-AI engineering skills through a production-style application.
+Demonstrate professional backend, cloud, data engineering,
+cloud engineering, and AI engineering skills through a
+production-style application.
 
-Target Stack:
+---
 
-Backend:
+## TARGET STACK
+
+Backend
 
 * Python
 * FastAPI
 * SQLAlchemy
 * Pydantic
 
-Database:
+Database
 
-* PostgreSQL
+* PostgreSQL 16
 
-Infrastructure:
+Infrastructure
 
 * Docker
+* Docker Compose
 * AWS EC2
 * AWS RDS
 * AWS S3
 * CloudWatch
 
-Frontend:
+Frontend (Future)
 
 * React
 * TypeScript
 * Vite
 
-AI Features (Future):
+AI Features (Future)
 
 * Embeddings
 * Semantic Search
-* Retrieval-Augmented Explanations
+* Retrieval-Augmented Generation (RAG)
+* LLM-assisted explanations
 
 ---
 
 ## CURRENT DEVELOPMENT PHASE
 
-Phase 1:
+Phase 1
 Core Graph Backend
 
 Status:
+
 IN PROGRESS
+
+Estimated Completion:
+
+~75%
 
 ---
 
 ## COMPLETED WORK
 
-Repository Created
+### Repository
 
-Project Structure Created:
+✓ Git repository created
+
+---
+
+### Project Structure
+
+Implemented
 
 backend/
-app/
-main.py
-core/
-database.py
-config.py
-nodes/
-relationships/
-graph/
-search/
+    app/
+        core/
+        nodes/
+        relationships/
+        graph/
+        search/
+
+frontend/
+
+data/
+
+tests/
 
 docker-compose.yml
-requirements.txt
+
 README.md
 
-Database Layer Implemented
-
-Implemented:
-
-* SQLAlchemy Base
-* Engine creation
-* SessionLocal
-* get_db dependency
-
-Configuration Layer Implemented
-
-Implemented:
-
-* Settings class
-* DATABASE_URL configuration
-* .env support
-
-Domain Models Implemented
-
-Node Model:
-
-* id
-* name
-* node_type
-* description
-* timestamps
-
-Relationship Model:
-
-* source_node_id
-* target_node_id
-* relationship_type
-* weight
-* evidence_level
-* timestamps
-
-Schemas Implemented
-
-Nodes:
-
-* NodeCreate
-* NodeUpdate
-* NodeRead
-
-Relationships:
-
-* RelationshipCreate
-* RelationshipRead
-
-API Routes Implemented
-
-Health:
-GET /health
-
-Nodes:
-POST   /nodes
-GET    /nodes
-GET    /nodes/{id}
-PUT    /nodes/{id}
-DELETE /nodes/{id}
-
-Relationships:
-POST   /relationships
-GET    /relationships
-GET    /relationships/{id}
-DELETE /relationships/{id}
-
-Graph:
-GET /graph/neighbors/{node_id}
-GET /graph/path
-
-Search:
-GET /search/nodes
-
-Application Wiring Implemented
-
-main.py:
-
-* FastAPI initialization
-* Router registration
-* create_all startup
+project_state.txt
 
 ---
 
-## CURRENT BLOCKER
+### Database Layer
 
-Docker unavailable.
+Implemented
 
-Observed Error:
+✓ SQLAlchemy Base
 
-zsh: command not found: docker
+✓ Engine creation
 
-Need to determine:
+✓ SessionLocal
 
-1. Is Docker Desktop installed?
-2. Is Docker running?
-3. Should PostgreSQL be run locally instead?
+✓ Dependency injection
 
----
-
-## IMMEDIATE NEXT STEPS
-
-Step 1
-Verify Docker Installation
-
-Commands:
-
-which docker
-docker --version
-
-Expected Result:
-Docker available in PATH.
+✓ PostgreSQL integration
 
 ---
 
-Step 2
-Install Docker Desktop if Missing
+### Configuration
 
-Verify:
+Implemented
 
-docker --version
-docker compose version
+✓ Settings class
 
----
+✓ .env configuration
 
-Step 3
-Start PostgreSQL
+✓ Environment variable loading
 
-docker compose up -d
-
-Verify:
-
-docker ps
+✓ DATABASE_URL configuration
 
 ---
 
-Step 4
-Create Database Connection
+### Domain Models
 
-Confirm:
+Node
 
-DATABASE_URL
+✓ id
 
-Connection Successful
+✓ name
+
+✓ node_type
+
+✓ description
+
+✓ timestamps
+
+Relationship
+
+✓ id
+
+✓ source_node_id
+
+✓ target_node_id
+
+✓ relationship_type
+
+✓ weight
+
+✓ evidence_level
+
+✓ timestamps
 
 ---
 
-Step 5
-Launch FastAPI
+### Schemas
 
-uvicorn app.main:app --reload
+Nodes
 
-Verify:
+✓ NodeCreate
+
+✓ NodeUpdate
+
+✓ NodeRead
+
+Relationships
+
+✓ RelationshipCreate
+
+✓ RelationshipRead
+
+---
+
+### REST API
+
+Health
+
+✓ GET /health
+
+Nodes
+
+✓ POST   /nodes
+
+✓ GET    /nodes
+
+✓ GET    /nodes/{id}
+
+✓ PUT    /nodes/{id}
+
+✓ DELETE /nodes/{id}
+
+Relationships
+
+✓ POST   /relationships
+
+✓ GET    /relationships
+
+✓ GET    /relationships/{id}
+
+✓ DELETE /relationships/{id}
+
+Graph
+
+✓ GET /graph/neighbors/{node_id}
+
+✓ GET /graph/path
+
+Search
+
+✓ GET /search/nodes
+
+---
+
+### Application Initialization
+
+Implemented
+
+✓ FastAPI initialization
+
+✓ Router registration
+
+✓ Automatic table creation
+
+---
+
+### Infrastructure
+
+Completed
+
+✓ Docker Desktop installed
+
+✓ Docker Compose functioning
+
+✓ PostgreSQL container running
+
+✓ PostgreSQL database created
+
+✓ Backend successfully connected
+
+✓ FastAPI application running
+
+✓ Swagger documentation available
+
+Verified:
 
 http://127.0.0.1:8000/docs
 
 ---
 
-Step 6
-Create Initial Graph Data
+## RECENT ISSUES RESOLVED
 
-Create Nodes:
+Resolved
+
+✓ Docker not installed
+
+✓ PostgreSQL container startup
+
+✓ DATABASE_URL configuration
+
+✓ PostgreSQL connectivity
+
+✓ Host port configuration
+
+✓ FastAPI startup
+
+---
+
+## CURRENT ARCHITECTURE
+
+Backend
+
+FastAPI
+
+↓
+
+SQLAlchemy ORM
+
+↓
+
+PostgreSQL (Docker)
+
+↓
+
+REST API
+
+↓
+
+Swagger UI
+
+---
+
+## CURRENT DEVELOPMENT STATUS
+
+Infrastructure
+
+✓ Complete
+
+Backend Skeleton
+
+✓ Complete
+
+Database Connectivity
+
+✓ Complete
+
+REST API
+
+✓ Complete
+
+Data Population
+
+Not Started
+
+Testing
+
+Not Started
+
+Frontend
+
+Not Started
+
+Cloud Deployment
+
+Not Started
+
+AI Layer
+
+Not Started
+
+---
+
+## IMMEDIATE NEXT STEPS
+
+### Step 1
+
+Populate the graph with initial cognitive nodes.
+
+Suggested nodes
 
 * Stress
+
 * Working Memory
-* Flow
+
 * Attention
+
+* Flow
+
 * Sleep
+
 * Creativity
+
+* Motivation
+
+* Anxiety
+
+* Cognitive Load
+
 * Context Window
 
-Create Relationships:
+---
 
-Stress -> impairs -> Working Memory
+### Step 2
 
-Sleep -> supports -> Attention
+Populate relationships.
 
-Working Memory -> analogous_to -> Context Window
+Examples
+
+Stress
+    impairs
+Working Memory
+
+Stress
+    reduces
+Attention
+
+Sleep
+    supports
+Attention
+
+Sleep
+    improves
+Working Memory
+
+Flow
+    enhances
+Creativity
+
+Working Memory
+    analogous_to
+Context Window
+
+Motivation
+    promotes
+Flow
+
+Anxiety
+    increases
+Stress
+
+---
+
+### Step 3
+
+Verify every endpoint through Swagger.
+
+Test
+
+Create
+
+Read
+
+Update
+
+Delete
+
+Neighbor traversal
+
+Path traversal
+
+Search
+
+---
+
+### Step 4
+
+Add automated tests.
+
+Suggested
+
+pytest
+
+FastAPI TestClient
+
+Database fixtures
+
+---
+
+### Step 5
+
+Implement database seed script.
+
+Suggested file
+
+backend/app/seed.py
+
+Purpose
+
+Populate a fresh database automatically.
 
 ---
 
 ## PHASE 1 DEFINITION OF DONE
 
-Requirements:
+Infrastructure
 
-[ ] PostgreSQL running
+[x] Docker installed
 
-[ ] FastAPI connected to PostgreSQL
+[x] PostgreSQL running
 
-[ ] CRUD for Nodes operational
+[x] FastAPI connected to PostgreSQL
 
-[ ] CRUD for Relationships operational
+Backend
 
-[ ] Neighbor traversal operational
+[x] CRUD Nodes
 
-[ ] Path traversal operational
+[x] CRUD Relationships
 
-[ ] Search endpoint operational
+[x] Neighbor traversal
 
-[ ] Initial graph dataset loaded
+[x] Path traversal
+
+[x] Search endpoint
+
+Data
+
+[ ] Initial graph dataset
+
+Testing
+
+[ ] Automated tests
+
+Documentation
+
+[ ] API examples
 
 ---
 
-## PHASE 2 PREVIEW
+## PHASE 2
 
-Graph Visualization
+Interactive Graph Explorer
 
-Potential Deliverables:
+Deliverables
 
-* React frontend
-* Interactive graph explorer
+* React
+
+* TypeScript
+
+* Cytoscape.js or React Flow
+
+* Interactive graph visualization
+
+* Search
+
+* Filtering
+
 * Node detail pages
-* Relationship visualization
-* Graph filtering
 
 ---
 
-## PHASE 3 PREVIEW
+## PHASE 3
 
 AI Layer
 
-Potential Deliverables:
+Deliverables
 
-* Embedding generation
+* Sentence embeddings
+
 * Semantic search
-* Similarity queries
-* Retrieval-augmented explanations
+
+* Similar node recommendations
+
+* Retrieval-Augmented explanations
+
+* Evidence ranking
 
 ---
 
-## PHASE 4 PREVIEW
+## PHASE 4
 
 Cloud Deployment
 
-Potential Deliverables:
+Deliverables
 
 * Docker image
-* AWS EC2 deployment
-* AWS RDS PostgreSQL
-* CloudWatch logging
-* CI/CD pipeline
+
+* GitHub Actions
+
+* AWS EC2
+
+* AWS RDS
+
+* AWS S3
+
+* CloudWatch
+
+* Production deployment
 
 ---
 
 ## INTERVIEW VALUE
 
-Skills Demonstrated:
+Demonstrated Skills
 
-Backend Engineering:
+Backend
 
-* FastAPI
-* SQLAlchemy
-* REST APIs
+✓ FastAPI
 
-Data Engineering:
+✓ SQLAlchemy
 
-* Graph modeling
-* PostgreSQL
+✓ REST API design
 
-Cloud Engineering:
+✓ Dependency Injection
 
-* Docker
-* AWS
+Database
 
-AI Engineering:
+✓ PostgreSQL
 
-* Embeddings
-* Semantic search
-* Retrieval systems
+✓ Relational modeling
 
-Software Engineering:
+✓ Graph-oriented schema
 
-* Clean architecture
-* Layered design
-* Production practices
+Infrastructure
+
+✓ Docker
+
+✓ Docker Compose
+
+✓ Environment configuration
+
+Software Engineering
+
+✓ Modular architecture
+
+✓ Layered design
+
+✓ Separation of concerns
+
+Future
+
+• Cloud deployment
+
+• AI integration
+
+• Semantic search
+
+• Production DevOps
 
 ---
 
 ## NOTES
 
-Future architectural consideration:
+Current database uses PostgreSQL.
 
-Potential migration to Neo4j should be evaluated only if graph
-complexity significantly exceeds PostgreSQL traversal capabilities.
+Remain on PostgreSQL until graph traversal,
+performance, or query complexity demonstrates
+a clear need for Neo4j.
 
-Current recommendation:
-Remain on PostgreSQL until a clear need emerges.
+The immediate priority is building a rich,
+well-connected cognitive knowledge graph.
 
+Cloud deployment should begin only after
+Phase 1 is fully complete.
