@@ -1,50 +1,31 @@
-def test_search_nodes_by_name(client):
-    client.post(
-        "/nodes",
-        json={
-            "name": "Attention",
-            "node_type": "cognitive_function",
-            "description": "Selective focus.",
-        },
-    )
-
+def test_search_nodes_by_name(client, attention_node):
     response = client.get("/search/nodes?q=Attention")
 
     assert response.status_code == 200
 
     data = response.json()
     assert len(data) == 1
-    assert data[0]["name"] == "Attention"
+    assert data[0]["name"] == attention_node["name"]
 
 
-def test_search_nodes_by_description(client):
-    client.post(
-        "/nodes",
-        json={
-            "name": "Memory",
-            "node_type": "cognitive_function",
-            "description": "Information retention and recall.",
-        },
-    )
-
+def test_search_nodes_by_description(client, memory_node):
     response = client.get("/search/nodes?q=retention")
 
     assert response.status_code == 200
 
     data = response.json()
     assert len(data) == 1
-    assert data[0]["name"] == "Memory"
+    assert data[0]["name"] == memory_node["name"]
 
 
 def test_search_nodes_returns_empty_list_when_no_match(client):
-    client.post(
-        "/nodes",
-        json={
-            "name": "Anxiety",
-            "node_type": "cognitive_state",
-            "description": "Heightened threat sensitivity.",
-        },
-    )
+    payload = {
+        "name": "Anxiety",
+        "node_type": "cognitive_state",
+        "description": "Heightened threat sensitivity.",
+    }
+
+    client.post("/nodes", json=payload)
 
     response = client.get("/search/nodes?q=nonexistent")
 

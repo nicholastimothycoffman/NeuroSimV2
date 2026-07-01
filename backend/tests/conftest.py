@@ -47,3 +47,62 @@ def client(db_session):
         yield test_client
 
     app.dependency_overrides.clear()
+
+@pytest.fixture
+def attention_payload():
+    return {
+        "name": "Attention",
+        "node_type": "cognitive_function",
+        "description": "Selective cognitive focus.",
+    }
+
+
+@pytest.fixture
+def memory_payload():
+    return {
+        "name": "Memory",
+        "node_type": "cognitive_function",
+        "description": "Information retention.",
+    }
+
+
+@pytest.fixture
+def relationship_payload():
+    return {
+        "relationship_type": "supports",
+        "description": "Attention supports memory.",
+        "weight": 1.0,
+        "evidence_level": "moderate",
+    }
+
+
+@pytest.fixture
+def attention_node(client, attention_payload):
+    response = client.post("/nodes", json=attention_payload)
+    assert response.status_code == 201
+    return response.json()
+
+
+@pytest.fixture
+def memory_node(client, memory_payload):
+    response = client.post("/nodes", json=memory_payload)
+    assert response.status_code == 201
+    return response.json()
+
+
+@pytest.fixture
+def connected_graph(client, attention_node, memory_node, relationship_payload):
+    payload = {
+        **relationship_payload,
+        "source_node_id": attention_node["id"],
+        "target_node_id": memory_node["id"],
+    }
+
+    response = client.post("/relationships", json=payload)
+    assert response.status_code == 201
+
+    return {
+        "source": attention_node,
+        "target": memory_node,
+        "relationship": response.json(),
+    }
